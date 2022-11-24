@@ -1,12 +1,10 @@
 @import "@fontsource/roboto";
 
-* {
-font-family: 'Roboto', sans-serif;
-font-weight: 500;
 
-}
 
 .item {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
     display: flex;
     justify-content: space-between;
     align-items: center;

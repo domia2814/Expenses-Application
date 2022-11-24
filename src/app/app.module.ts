@@ -10,6 +10,7 @@ import { ExpenseItemComponent } from './expenses/expenses-list/expense-item/expe
 import { FormsModule } from '@angular/forms';
 import { ExpenseService } from './expenses/expense.service';
 import { SummaryComponent } from './summary/summary.component';
+import { SummaryService } from './summary/summary.service';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,7 @@ import { SummaryComponent } from './summary/summary.component';
     AppRoutingModule,
     FormsModule,
   ],
-  providers: [ExpenseService],
+  providers: [ExpenseService, SummaryService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

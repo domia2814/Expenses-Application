@@ -9,22 +9,22 @@ export class ExpenseService{
         new Expense(
           'Potatoes',
           15,
-          1
+          'FOOD'
         ),
         new Expense(
           'Ticket',
           10,
-          0
+          'TRAVELS'
         ),
         new Expense(
           'Energy',
           800,
-          2
+          'BILLS'
         ),
         new Expense(
-          'Table',
+          'Dentist',
           2000,
-          3
+          'HEALTH'
         )
       ]
 
@@ -36,4 +36,32 @@ export class ExpenseService{
         this.expenses.push(expense)
         this.expenseChanged.next(this.expenses.slice()) // to zabieg aby pojawiały się składniki w tablicy "kopii"
       }
-}
+
+      sumExpensesBills(){
+      return this.expenses
+        .filter(function (el) { return el.category === 'BILLS'; })
+        .map(function (el) { return el.price; })
+        .reduce(function (p, c) { return (p + c); });
+      }
+
+      sumExpensesFood(){
+        return this.expenses
+          .filter(function (el) { return el.category === 'FOOD'; })
+          .map(function (el) { return el.price; })
+          .reduce(function (p, c) { return (p + c); });
+        }
+
+        sumExpensesHealth(){
+          return this.expenses
+            .filter(function (el) { return el.category === 'HEALTH'; })
+            .map(function (el) { return el.price; })
+            .reduce(function (p, c) { return (p + c); });
+          }  
+
+          sumExpensesTravels(){
+            return this.expenses
+              .filter(function (el) { return el.category === 'TRAVELS'; })
+              .map(function (el) { return el.price; })
+              .reduce(function (p, c) { return (p + c); });
+            }  
+    }

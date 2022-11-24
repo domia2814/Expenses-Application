@@ -1,0 +1,30 @@
+div {
+    display: flex;
+    justify-content: space-evenly;
+    
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    width: 100%;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-bottom: 1rem;
+    background-color: rgb(167, 143, 143);
+}
+
+h4 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem
+}
+
+p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}

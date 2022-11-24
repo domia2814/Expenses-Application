@@ -9,6 +9,7 @@ import { Expense } from 'src/app/expenses/expense.model';
 export class ExpenseItemComponent implements OnInit {
   @Input() expense: Expense
   @Input() index: number
+  @Input() sum: number
 
   constructor() { }
 

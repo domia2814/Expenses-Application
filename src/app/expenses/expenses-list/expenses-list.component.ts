@@ -10,7 +10,7 @@ import { ExpenseService } from '../expense.service';
 export class ExpensesListComponent implements OnInit {
   
   expenses: Expense[]
-  
+
   constructor(private expenseService: ExpenseService) { }
 
   ngOnInit(): void {
@@ -20,6 +20,10 @@ export class ExpensesListComponent implements OnInit {
       (expenses: Expense[]) =>
       this.expenses = expenses
     )
+    
   }
+
+  
+
 
 }

@@ -31,17 +31,11 @@
                   > Add </button>
                 </div>
                 <div>
-                    <label for="category"> Select category </label>
-                    <select 
-                    id="category" 
-                    name="category" 
-                    ngModel
-                    required>
-                        <option>TRAVELS</option>
-                        <option>FOOD</option>
-                        <option>BILLS</option>
-                        <option>HOUSE</option>
-                      </select>
+                    <label for="category"> Select category: </label><br><br>
+                      <label><input type="radio" id="food" name="category" value="FOOD" ngModel required><i class='ti-shopping-cart'></i> FOOD </label><br>
+                      <label><input type="radio" id="travels" name="category" value="TRAVELS" ngModel required><i class='ti-car'></i> TRAVELS </label><br>
+                      <label><input type="radio" id="bills" name="category" value="BILLS" ngModel required><i class='ti-email'></i> BILLS </label><br>
+                      <label><input type="radio" id="health" name="category" value="HEALTH" ngModel required><i class='ti-pulse'></i> HEALTH </label>
                 </div>
             </div>
         </form>

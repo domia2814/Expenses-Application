@@ -2,14 +2,15 @@ export class Expense {
     constructor(
         public name: string,
         public price: number,
-        public category: Category
+        public category: string
+        // public category: Category
     )
  {}
 
  }
-enum Category {
-    TRAVELS,
-    FOOD,
-    BILLS,
-    HOUSE
-}
+// export enum Category {
+//     Travels = 'TRAVELS',
+//     Food= 'FOOD',
+//     Bills = 'BILLS',
+//     House = 'HOUSE'
+// }

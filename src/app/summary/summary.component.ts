@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { SummaryDetail } from './summary-detail.model';
+import { SummaryService } from './summary.service';
 
 @Component({
   selector: 'app-summary',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SummaryComponent implements OnInit {
 
-  constructor() { }
+  summaries: SummaryDetail[]
+  
+  constructor(private summaryService: SummaryService) { }
 
   ngOnInit(): void {
+    this.summaries = this.summaryService.getSumaries()
   }
 
 }
