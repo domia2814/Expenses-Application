@@ -1,0 +1,9 @@
+<div class="expenses-list">
+    <div>
+        <app-expense-item 
+        *ngFor="let expenseEl of expenses; let i = index"
+        [expense] = "expenseEl"
+        [index] = "i"
+        ></app-expense-item>
+    </div>
+</div>
