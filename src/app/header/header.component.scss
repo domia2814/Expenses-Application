@@ -18,8 +18,9 @@ font-weight: 600;
         font-size: 1rem;
         width: 100%;
         height: auto;
-        border: 1px black solid;
-        background-color: rgb(122, 106, 106);
+        border: 1px rgb(179, 146, 146) solid;
+        background-color: rgb(122, 106, 106, 0.2);
+        border-radius: 0.5rem;
 
         li, a {
             text-decoration: none;

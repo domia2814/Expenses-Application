@@ -8,12 +8,13 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border: 1px black solid;
+    border: 1px rgb(153, 109, 109) solid;
     width: 100%;
     gap: 5rem;
     padding: 0.5rem;
     margin: 0.5rem;
-    background-color: rgb(150, 118, 118);
+    background-color: rgb(150, 118, 118,0.8);
+    border-radius: 0.5rem;
       
     h4 {
         width: 5rem

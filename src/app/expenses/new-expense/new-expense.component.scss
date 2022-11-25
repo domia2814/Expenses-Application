@@ -1,15 +1,17 @@
 p{
     display: flex;
     justify-content: center;
+    font-weight: 600;
 }
 
 .form-main{
-    border: 1px black solid;
+    border: 1px rgb(121, 108, 108) solid;
     margin-left: 20rem;
     margin-right: 20rem;
     margin-bottom: 0.5rem;
     width: 100%;
-    background-color: rgb(154, 138, 138);
+    background-color: rgb(154, 138, 138, 0.8);
+    border-radius: 1rem;
 }
 
 .form {
@@ -22,4 +24,9 @@ p{
 }
 button {
     cursor: pointer;
+    padding: 0.3rem 1rem 0.3rem 1rem;
+    background-color: rgb(75, 160, 104);
+    border: 1px solid green;
+    border-radius: 0.3rem;
+    
 }

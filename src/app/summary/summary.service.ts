@@ -1,5 +1,6 @@
 import { Injectable } from "@angular/core";
 import { Subject } from "rxjs";
+import { Expense } from "../expenses/expense.model";
 import { ExpenseService } from "../expenses/expense.service";
 import { SummaryDetail } from "./summary-detail.model";
 
@@ -7,6 +8,7 @@ import { SummaryDetail } from "./summary-detail.model";
 export class SummaryService{
     
     summaryChanged = new Subject<SummaryDetail[]>()
+
     
     constructor(private expenseService: ExpenseService) { }
    
@@ -30,7 +32,7 @@ export class SummaryService{
       ]
 
       getSumaries(){
-        return this.summaries
+        return this.summaries.slice()
       }
 
    

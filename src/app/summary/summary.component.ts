@@ -26,10 +26,16 @@ export class SummaryComponent implements OnInit, OnDestroy {
       (expenses: Expense[]) =>
       this.expenses = expenses
     )
+    this.summaryService.summaryChanged 
+    .subscribe(
+      (summaries: SummaryDetail[]) =>
+      this.summaries = summaries
+    )
   }
 
   ngOnDestroy(): void {
     this.isSumming.unsubscribe()
+    
   }
 
 }
