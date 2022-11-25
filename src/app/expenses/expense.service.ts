@@ -1,32 +1,32 @@
-import { Subject } from "rxjs";
-import { Expense } from "./expense.model";
+import { BehaviorSubject, Subject } from "rxjs";
+import { Category, Expense } from "./expense.model";
 
 export class ExpenseService{
-    
-    expenseChanged = new Subject<Expense[]>() // to zabieg aby pojawiały się składniki w tablicy "kopii"
 
     private expenses: Expense[] = [
         new Expense(
           'Potatoes',
           15,
-          'FOOD'
+          Category.food
         ),
         new Expense(
           'Ticket',
           10,
-          'TRAVELS'
+          Category.travels
         ),
         new Expense(
           'Energy',
           800,
-          'BILLS'
+          Category.bills
         ),
         new Expense(
           'Dentist',
           2000,
-          'HEALTH'
+          Category.health
         )
       ]
+      
+      expenseChanged = new BehaviorSubject<Expense[]>(this.expenses) // to zabieg aby pojawiały się składniki w tablicy "kopii"
 
       getExpenses(){
         return this.expenses.slice() // slice oznacza utworzenie tablicy kopii
@@ -37,31 +37,10 @@ export class ExpenseService{
         this.expenseChanged.next(this.expenses.slice()) // to zabieg aby pojawiały się składniki w tablicy "kopii"
       }
 
-      sumExpensesBills(){
+      sumExpenses(category: Category){
       return this.expenses
-        .filter(function (el) { return el.category === 'BILLS'; })
+        .filter(function (el) { return el.category === category; })
         .map(function (el) { return el.price; })
         .reduce(function (p, c) { return (p + c); });
       }
-
-      sumExpensesFood(){
-        return this.expenses
-          .filter(function (el) { return el.category === 'FOOD'; })
-          .map(function (el) { return el.price; })
-          .reduce(function (p, c) { return (p + c); });
-        }
-
-        sumExpensesHealth(){
-          return this.expenses
-            .filter(function (el) { return el.category === 'HEALTH'; })
-            .map(function (el) { return el.price; })
-            .reduce(function (p, c) { return (p + c); });
-          }  
-
-          sumExpensesTravels(){
-            return this.expenses
-              .filter(function (el) { return el.category === 'TRAVELS'; })
-              .map(function (el) { return el.price; })
-              .reduce(function (p, c) { return (p + c); });
-            }  
     }

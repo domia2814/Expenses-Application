@@ -1,6 +1,6 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { Expense } from '../expenses/expense.model';
+import { Category, Expense } from '../expenses/expense.model';
 import { ExpenseService } from '../expenses/expense.service';
 import { SummaryDetail } from './summary-detail.model';
 import { SummaryService } from './summary.service';
@@ -14,6 +14,7 @@ export class SummaryComponent implements OnInit, OnDestroy {
 
   summaries: SummaryDetail[]
   expenses: Expense[]
+  Category = Category
 
   private isSumming: Subscription
 
@@ -23,8 +24,11 @@ export class SummaryComponent implements OnInit, OnDestroy {
     this.summaries = this.summaryService.getSumaries()
     this.isSumming = this.expenseService.expenseChanged 
     .subscribe(
-      (expenses: Expense[]) =>
-      this.expenses = expenses
+      (expenses: Expense[]) =>{
+        console.log(expenses);
+        this.expenses = expenses
+      }
+      
     )
   }
 

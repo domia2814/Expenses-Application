@@ -2,10 +2,10 @@
 <div class="main" *ngFor="let summary of summaries">
 <div class="item" >
     <h4>  
-        <p> <i *ngIf="summary.category ==='FOOD'" class="ti-shopping-cart" ></i>
-        <i *ngIf="summary.category ==='TRAVELS'" class="ti-car" ></i> 
-        <i *ngIf="summary.category ==='BILLS'" class="ti-email" ></i>
-        <i *ngIf="summary.category ==='HEALTH'" class="ti-pulse" ></i> </p>        
+        <p> <i *ngIf="summary.category === Category.food" class="ti-shopping-cart" ></i>
+        <i *ngIf="summary.category === Category.travels" class="ti-car" ></i> 
+        <i *ngIf="summary.category === Category.bills" class="ti-email" ></i>
+        <i *ngIf="summary.category === Category.health" class="ti-pulse" ></i> </p>        
         {{ summary.category }} 
     </h4>
     <p> {{ summary.sum | currency:'USD' : 'symbol':'1.2-2'  }} </p>

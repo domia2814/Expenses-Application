@@ -2,15 +2,14 @@ export class Expense {
     constructor(
         public name: string,
         public price: number,
-        public category: string
+        public category: Category
         // public category: Category
-    )
- {}
-
+    ){}
  }
-// export enum Category {
-//     Travels = 'TRAVELS',
-//     Food= 'FOOD',
-//     Bills = 'BILLS',
-//     House = 'HOUSE'
-// }
+
+export enum Category {
+    food = 'FOOD',                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
+    travels = 'TRAVELS',
+    bills = 'BILLS',
+    health = 'HEALTH'
+}
