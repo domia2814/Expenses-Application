@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { Expense } from 'src/app/expenses/expense.model';
 import { ExpenseService } from '../expense.service';
 
@@ -7,15 +8,16 @@ import { ExpenseService } from '../expense.service';
   templateUrl: './expenses-list.component.html',
   styleUrls: ['./expenses-list.component.scss'],
 })
-export class ExpensesListComponent implements OnInit {
+export class ExpensesListComponent implements OnInit, OnDestroy {
   
   expenses: Expense[]
+  private isChanged: Subscription
 
   constructor(private expenseService: ExpenseService) { }
 
   ngOnInit(): void {
     this.expenses = this.expenseService.getExpenses()
-    this.expenseService.expenseChanged  // to jest metoda by nowe wydatki pojawiały się mimo zastosowania slice() - tablicy "kopii"
+    this.isChanged = this.expenseService.expenseChanged  // to jest metoda by nowe wydatki pojawiały się mimo zastosowania slice() - tablicy "kopii"
     .subscribe(
       (expenses: Expense[]) =>
       this.expenses = expenses
@@ -23,7 +25,8 @@ export class ExpensesListComponent implements OnInit {
     
   }
 
-  
-
+  ngOnDestroy(): void {
+    this.isChanged.unsubscribe()
+  }
 
 }

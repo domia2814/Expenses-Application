@@ -7,7 +7,7 @@ import { SummaryDetail } from "./summary-detail.model";
 export class SummaryService{
     
     summaryChanged = new Subject<SummaryDetail[]>()
-    sum:number
+    
     constructor(private expenseService: ExpenseService) { }
    
     private summaries: SummaryDetail[] = [
@@ -30,7 +30,7 @@ export class SummaryService{
       ]
 
       getSumaries(){
-        return this.summaries.slice()
+        return this.summaries
       }
 
    
